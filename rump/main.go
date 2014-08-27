@@ -72,7 +72,12 @@ func desiredFunc() (func() error, error) {
 				return err
 			}
 
-			r.Value()
+			val, err := r.Value()
+			if err != nil {
+				return err
+			}
+
+			fmt.Println(val)
 			return nil
 		}
 	}
